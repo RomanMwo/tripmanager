@@ -1,6 +1,18 @@
 package pl.edu.agh.mwo;
 
-public class TripManager {
+import org.junit.Before;
 
+public class TripManager
+{
+
+	TripManager tripLive;
+
+	@Before
+	public void prepareTest()
+	{
+		tripLive = new TripManager();
+	}
+	
+	
 
 }
