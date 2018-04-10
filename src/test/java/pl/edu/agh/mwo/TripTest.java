@@ -67,7 +67,7 @@ public class TripTest {
 		Trip trip = new Trip("Hiszpania", "Wspaniala pogoda");
 		Photo photo = new Photo("naj");
 		trip.addPhoto(photo);
-		((ArrayList<Photo>) trip.photos).get(2);
+		((ArrayList<Photo>) trip.photos).get(1);
 	
 }
 	

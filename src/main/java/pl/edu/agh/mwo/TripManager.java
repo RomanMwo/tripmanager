@@ -10,7 +10,22 @@ public class TripManager
 
 	public void addTrip(Trip trip)
 	{
-		trips.add(trip);
+		String name = null;
+
+		for (Trip tri : trips)
+		{
+			if (tri.getName() == trip.getName())
+			{
+				name = tri.getName();
+			}
+
+		}
+		if (name == trip.getName())
+		{
+			System.out.println("Trip " + trip.getName()
+					+ " has arleady exist and wasn't added");
+		} else
+			trips.add(trip);
 
 	}
 
@@ -24,14 +39,19 @@ public class TripManager
 		trips.remove(trip);
 	}
 
-	public String findTrip(String nameTrip)
+	public boolean findTrip(String nameTrip)
 	{
-		String results = null;
-		Trip trip = new Trip(nameTrip, "dowolnyNieistotnyDescription");
-		if (trip.getName() == nameTrip)
-			results = nameTrip;
-		else 
-			System.out.println("nie znalezlismy twojej wycieczki");
+		boolean results = false;
+		for (Trip trip : trips)
+		{
+			if (trip.getName() == nameTrip)
+			{
+				results = true;
+				break;
+			} else
+				results = false;
+		}
+
 		return results;
 	}
 
